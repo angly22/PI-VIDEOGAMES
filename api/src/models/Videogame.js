@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('videogame', {
-    ID: {
+    id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey:true,
@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     date_release: {
-      type: DataTypes.DATEONLY
+      type: DataTypes.STRING
     },
     rating: {
       type: DataTypes.FLOAT
@@ -29,6 +29,16 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     }, 
+    create:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      defaultValue:"create"
+    },
+    background_image:{
+      type: DataTypes.TEXT,
+      validate: { isUrl: true },
+      defaultValue: 'https://wiki.p-insurgence.com/images/0/09/722.png'      
+    },
   },
   {
     timestamps:false

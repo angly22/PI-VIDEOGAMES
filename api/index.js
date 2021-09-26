@@ -19,10 +19,43 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const {Videogame} = require('./src/db.js')
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: true }).then(() => { //  DEJAR EN TRUE
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+  })})
+// ELIMINAR SOLO SON DATOS DE PRUEBA
+
+  //   var mario = Videogame.create({
+  //     name:"mario",
+  //     description:"este es un juego genial",
+  //     platforms:"xbox",
+  //     genres:"Adventure",
+  //   });
+
+  //   var circus = Videogame.create({
+  //     description:"este jueo es divertido",
+  //     name:"mcircus",
+  //     platforms:"play",
+  //     genres:"Action",
+  //   });
+
+  //   var hunter = Videogame.create({
+  //     description:"este juego me gusta",
+  //     name:"hunter",
+  //     platforms:"xbox",
+  //     genre:"Action",
+  //   });
+  
+  
+
+
+
+
+  //   Promise.all([hunter,mario,circus])
+  //   .then(res=>{
+  //     console.log("juegos precargados")
+  //   })
+  // })})

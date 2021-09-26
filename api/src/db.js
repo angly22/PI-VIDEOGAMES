@@ -2,9 +2,10 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST,
-} = process.env;
+const {DB_USER, DB_PASSWORD, DB_HOST} = process.env;
+var axios = require('axios');
+const url=`https://api.rawg.io/api/`
+const {APIKEY}=process.env
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -30,13 +31,28 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const {Videogame,Gender} = sequelize.models;
+const {Videogame,Genre} = sequelize.models;
 //const { Videogame , otromodelo,otromodelo,...} = sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Videogame.belongsToMany(Gender, {through: 'genVideo', timestamps:false}); // 
-Gender.belongsToMany(Videogame, {through: 'genVideo',timestamps:false});
+Videogame.belongsToMany(Genre, {through: 'intermedia', timestamps:false}); // 
+Genre.belongsToMany(Videogame, {through: 'intermedia',timestamps:false});
 
+const getGen= async (req,res)=>{
+const genreApi = await axios.get(`${url}genres?key=${APIKEY}`)// va a la api
+const genres = genreApi.data.results//.map(el=>el) //mapea la info de la api
+const ultimos =genres.forEach(el => { 
+    Genre.findOrCreate({ // creame en model genre lo que me viene por el forEach
+      where: {name: el.name},
+      defaults:{ id: el.id}
+    })
+})
+console.log(ultimos)
+return "generos cargados"
+}
+getGen()
+.then((value)=> console.log(value))
+.catch((error)=>console.error(error))
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
