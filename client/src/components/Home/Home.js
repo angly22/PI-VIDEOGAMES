@@ -55,7 +55,7 @@ function handlerSortAbece(e) {
 
 return(
     <div>
-<Link to='/videogame'>create to your own video game</Link>
+<Link to='/videogames'>create to your own video game</Link>
 <Link to='/'>Inicio</Link>
 <h1>Videogamessssssssss</h1>
 <button onClick={e=>{handleClick(e)}}>
@@ -88,11 +88,13 @@ return(
     {currentGames?.map(el=>{ //mapeo el estado global
         return (
             <div className='cards'>
-            <Link to={"/home" + el.id}>
+            <Link to={"/home"}>
         <Card
+        id={el.id}
         background_image={el.background_image}
         name={el.name}//aqui me traigo solos los componentes que ya tengo destruct. en el componente card
         genres={el.genres}
+        
         key={el.id}
         />
         </Link>

@@ -16,10 +16,10 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     description: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    date_release: {
+    released: {
       type: DataTypes.STRING
     },
     rating: {
@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
     },
     platforms: {
       type: DataTypes.STRING,
-      allowNull: false,
+     // allowNull: false,
     }, 
     create:{
       type:DataTypes.STRING,

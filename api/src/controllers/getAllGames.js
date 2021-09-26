@@ -26,7 +26,8 @@ const getGames= async (req,res)=>{ // debe esperar a que se carge toda la info a
         response.data.results.map(element => { // capturo la rspuesta xq es asincrono
             games.push( //push each game's object into the array but with only name, img and genres properties.
                         Object.keys(element).reduce(function(obj, k) {
-                        if (k==='id' || k === 'background_image' || k === 'name' ||k === 'genres' || k==='rating'
+                        if (k==='id' || k === 'background_image' || k === 'name' ||k === 'genres' || k==='rating' ||
+                        k==='released' || k==='description' || k==='platforms'
                          ) obj[k] = element[k];
                         return obj;
                 }, {}))
@@ -62,7 +63,8 @@ const getAllGameName= async (req,res)=>{
     let response = await axios.get(`${url}games?search=${name}&search_precise=true&key=${APIKEY}&page_size=${page_size}`)
     response.data.results.map(el=>(
         array.push(  Object.keys(el).reduce(function(obj, k) {
-                      if ( k==='id' ||k === 'background_image' || k === 'name' ||k === 'genres' || k==='date_release'
+                      if ( k==='id' ||k === 'background_image' || k === 'name' ||k === 'genres' || k==='released' ||k==='rating'
+                      || k==='description' ||k==='platforms'
                          ) obj[k] = el[k];
                          return obj;
                      }, {}))) )

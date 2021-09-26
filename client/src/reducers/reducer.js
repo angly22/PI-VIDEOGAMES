@@ -2,7 +2,8 @@ const initialState = {
   //state
   videogames: [],
   filter1: [], // mi estado inicial es un arreglo vacio
-  genero:[]
+  genero:[],
+  detail:[]
 };
 
 function rootReducer(state = initialState, action) {
@@ -12,7 +13,8 @@ function rootReducer(state = initialState, action) {
         ...state,
         videogames: action.payload, // a mi stado inicial, mandale todo lo que tenga la accion get videogames
         filter1: action.payload,
-        genero: action.payload
+        genero:action.payload,
+        //detail:action.payload
       };
 
       case "GET-NAME-VIDEOGAMES":
@@ -21,11 +23,19 @@ function rootReducer(state = initialState, action) {
           videogames:action.payload
         }
 
-        case "GET-GENRES": // solo devuelve el estado como esta, xq solo se crea en otra ruta
+        case "GET-GENRE": // solo devuelve el estado como esta, xq solo se crea en otra ruta
         return{
           ...state,
           genero:action.payload
         }
+
+        case "GET-DETAILS": // solo devuelve el estado como esta, xq solo se crea en otra ruta
+        return{
+          ...state,
+          detail:action.payload
+        }
+
+
 
 
     case "FILTER_CREATE":
@@ -86,6 +96,10 @@ function rootReducer(state = initialState, action) {
           videogames:orderRating
         };
        
+
+
+
+
         case "POST-VIDEOGAME": // solo devuelve el estado como esta, xq solo se crea en otra ruta
           return{
             ...state

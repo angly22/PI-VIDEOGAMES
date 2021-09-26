@@ -34,8 +34,9 @@ const getGameID= async (req,res)=>{
         gameDetails={
             id : response.data.id,
             name:response.data.name,
+            background_image:response.data.background_image,
             description:response.data.description,
-            date_release:response.data.date_release,
+            released:response.data.released,
             rating:response.data.rating,
             platforms : response.data.platforms.map(elm=>elm.platform.name),
             genres :response.data.genres.map(el=>el.name)

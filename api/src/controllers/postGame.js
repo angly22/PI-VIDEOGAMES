@@ -16,7 +16,7 @@ const url=`https://api.rawg.io/api/`
 
  const gamePost= async (req,res)=>{ 
     try {
-        const { name, description, date_release, rating, platforms, genres} = req.body
+        const { name, description,released, rating, platforms, genres} = req.body
     console.log(name)
         const [ videogame, created ] = await Videogame.findOrCreate({
             where:{
@@ -25,7 +25,7 @@ const url=`https://api.rawg.io/api/`
             }, 
             defaults:{
                 description,
-                date_release,
+                released,
                 rating,
                 platforms,
             }

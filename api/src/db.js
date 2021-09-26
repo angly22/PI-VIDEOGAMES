@@ -40,14 +40,14 @@ Genre.belongsToMany(Videogame, {through: 'intermedia',timestamps:false});
 
 const getGen= async (req,res)=>{
 const genreApi = await axios.get(`${url}genres?key=${APIKEY}`)// va a la api
-const genres = genreApi.data.results//.map(el=>el) //mapea la info de la api
-const ultimos =genres.forEach(el => { 
+const genres = genreApi.data.results.map(el=>el) //mapea la info de la api
+genres.forEach(el => { 
     Genre.findOrCreate({ // creame en model genre lo que me viene por el forEach
       where: {name: el.name},
       defaults:{ id: el.id}
     })
 })
-console.log(ultimos)
+
 return "generos cargados"
 }
 getGen()
