@@ -11,6 +11,6 @@ const platforms = [
     "PlayStation 5","PlayStation 4","PlayStation 3","PlayStation 2",
     "PlayStation ","PS Vita","PSP"
 ]
-
-var count=platforms.length
-console.log(count)
+export default platforms;
+// var count=platforms.length
+// console.log(count)

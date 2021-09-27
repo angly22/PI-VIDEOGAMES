@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react"; // los hooks a utilizar de react
 import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de react-redux
-import { getVideogames,FILTER_CREATE,FILTER_RATING,ABC_FILTER } from "../../actions/action";
+import {getGenres, getVideogames,FILTER_CREATE,FILTER_RATING,ABC_FILTER,FILTER_GENRE } from "../../actions/action";
 import { Link } from "react-router-dom";
 import Card from "../Card/Card";
 import Paginado from "../Paginado/Paginado";
 import './Home.css'
 import SearchBar from "../SearchBar/SearchBar";
 import CreateVideo from "../CreateVideo/CreateVideo";
-//import Filter from "../Filters/Filter";
 export default function Home() {
   
 
     const dispatch = useDispatch() // con esto despacho mis acciones
     const allgames = useSelector((state) => state.videogames) //traeme en esta constante todo lo que esta en el estado de videogames(en el reducer)
-   
+    const genres = useSelector((state) => state.genero)
     // PAGINADO-------------------
 
     const[orden,setOrdenado]=useState('')
@@ -28,7 +27,8 @@ export default function Home() {
     }
 
 useEffect (()=>{ //nos traemos del estado los videojuegos cuando el componente se monta co useEfect
-    dispatch(getVideogames()) // es lo mismo que mapsdispatch
+    dispatch(getVideogames())
+    dispatch(getGenres()) // es lo mismo que mapsdispatch
 },[dispatch])// se pone arreglo vacio/dispatch para que no se haga un loop infinito
 
 function handleClick(e){
@@ -45,7 +45,9 @@ function handlerFilterRating(e) {
     setCurrentPage(1);                  //seteo para que empiece en la paina 1
     setOrdenado(`Ordenado ${e.target.value}`)
 }
-
+function handlerFilterGenres(e) {
+    dispatch(FILTER_GENRE(e.target.value))// lo que viene del select(payload)
+    }
 function handlerSortAbece(e) {
     e.preventDefault();
     dispatch(ABC_FILTER(e.target.value))//despacho la accion
@@ -79,6 +81,11 @@ return(
     <option value="Better Rating">Better Rating</option> {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
     <option value="Worse Rating">Worse Rating</option>
     </select>
+    <select onChange={e=> handlerFilterGenres(e)} >
+    <option value="All">Genres</option>  
+    {genres.map(el=> <option value={el.name}  >{el.name}</option>)}
+    </select>
+
     <Paginado
     gamesPage={gamesPage}
     allgames={allgames.length}

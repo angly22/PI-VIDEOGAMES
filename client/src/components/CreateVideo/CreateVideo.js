@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de re
 import { Link} from "react-router-dom";
 import {postVideogame,getGenres} from "../../actions/action";
 import axios from "axios";
-
+//import platforms from "../../img-array/platforms";
 // ---------------------FUNCION DE VALIDACION DE ERRORES------------------------------------//
 function validate(input) {
     let errors={}

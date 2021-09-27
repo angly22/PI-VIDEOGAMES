@@ -22,7 +22,7 @@ const { conn } = require('./src/db.js');
 const {Videogame} = require('./src/db.js')
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => { //  DEJAR EN TRUE
+conn.sync({ force: true }).then(() => { //  SI ESTA EN TRUE SE BORRA CADA QUE RENDERIZO
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   })})

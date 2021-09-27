@@ -19,7 +19,18 @@ export function FILTER_CREATE(payload) {
     type: 'FILTER_CREATE',//mismo nombre en el reducer
     payload //action.payload en el reducer
   }
+  
 }
+
+export function FILTER_GENRE(payload) {
+  console.log(payload)
+  return{
+    type: 'FILTER_GENRE',//mismo nombre en el reducer
+    payload //action.payload en el reducer
+  }
+  
+}
+
 
 
 export function FILTER_RATING(payload) {

@@ -13,7 +13,6 @@ function rootReducer(state = initialState, action) {
         ...state,
         videogames: action.payload, // a mi stado inicial, mandale todo lo que tenga la accion get videogames
         filter1: action.payload,
-        genero:action.payload,
         detail:action.payload
       };
 
@@ -53,7 +52,32 @@ function rootReducer(state = initialState, action) {
         videogames: filterCreate,
       };
 
-    
+  
+      case "FILTER_GENRE":
+        const allGenresFilter = state.filter1;
+        let filterGenre = action.payload === "All"? allGenresFilter : allGenresFilter.filter((el) => {
+          //console.log(el.genres)
+                  let aux1= el.genres
+                  for (let j of aux1) {
+                    //console.log(  element.name === action.payload)
+                    if (j.name === action.payload) return true
+                  }return false
+                })
+                if (filterGenre.length === 0) {
+                  alert(`No ${action.payload} games found`)
+                  filterGenre = state.videogames
+                }return {
+                  ...state,
+                  videogames: filterGenre,
+                };
+        
+               // console.log(filterGenre)
+        //         return {
+        //   ...state,
+        //   videogames: filterGenre,
+        // }; 
+
+        
     case "ABC_FILTER":
   
         let orderAbc= action.payload === "A To z"?

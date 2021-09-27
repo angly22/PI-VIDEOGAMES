@@ -8,6 +8,7 @@ const {getGameID}= require('../controllers/getGamesID.js');
 const {getGenre}= require('../controllers/getGenre.js');
 const {gamePost}= require('../controllers/postGame.js');
 const {getAll,getAllGameName}= require('../controllers/getAllGames');
+const {finalFiltro} = require('../controllers/getPlatforms')
 //var router = express.Router();
 //router.use(express.json());
 
@@ -38,6 +39,7 @@ router.get('/genres' ,getGenre)
 //POST /videogames
 router.post('/videogame' ,gamePost)
 
+router.get('/filtrogenero', finalFiltro)
 
 module.exports=router;
 
