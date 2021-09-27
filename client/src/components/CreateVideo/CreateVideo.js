@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"; // los hooks a utilizar de r
 import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de react-redux
 import { Link} from "react-router-dom";
 import {postVideogame,getGenres} from "../../actions/action";
-
+import axios from "axios";
 
 // ---------------------FUNCION DE VALIDACION DE ERRORES------------------------------------//
 function validate(input) {
@@ -23,9 +23,8 @@ export default function CreateVideo() {
     const [input,setInput]=useState({
         name:"",
         description:"",
-        date_release:"",
+        released:"",
         rating:"",
-        platforms:[],
         genres:[]
     })
 
@@ -52,12 +51,29 @@ export default function CreateVideo() {
         })        //es como un push              //lo que ya habia y despues lo que me llega x el value
     }
 
-    function handleSubmit(e){ // cada vez que se cambie o se modifiquen mis imputs
-        e.preventDefault(e); // no se refresca
+    async function handleSubmit(e){ // cada vez que se cambie o se modifiquen mis imputs
+        try {
+            e.preventDefault(e); // no se refresca
         console.log(input)
-        dispatch(postVideogame(input)) // despacho mi accion a traves del inpuit
-        alert("Videogame Successfully Created ")     // se creo con exito     
-        }       
+        var responsePost = await axios.post("http://localhost:3001/videogame",input);//quiero en esta ruta hacer el post del payload
+        console.log(responsePost)
+        setInput({
+            name:"",
+            description:"",
+            released:"",
+            rating:"",
+            genres:[]
+        })
+       // return responsePost
+      ///dispatch(postVideogame(input)) // despacho mi accion a traves del inpuit
+        alert("Videogame Successfully Created ")
+        } catch (error) {
+            alert("no se creo el videojuego")
+        }
+             // se creo con exito     
+       
+    
+    }       
     
     return(
         <div>
@@ -91,17 +107,16 @@ export default function CreateVideo() {
                 <label>Date of release:</label>
                 <input placeholder="Date  created it"
                 type="text" 
-                // step="0.01" min="1.00" y max="10.00"
-                name="date_release"
-                value={input.date_release} // lo que me llega por el input
-                // className={errors.username && "danger"}
+                name="released"
+                value={input.released} // lo que me llega por el input
+                
                 onChange={(e)=> handleChange(e)}
                 />
                 </div>
                 
                 <div> 
                 <label>Rating:</label>
-                <input placeholder="1.00 to 10.00"
+                <input placeholder="1 to 10"
                 type="number" 
                 name="rating"
                 value={input.rating} // lo que me llega por el input

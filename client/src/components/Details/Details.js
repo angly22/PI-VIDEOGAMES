@@ -15,7 +15,7 @@ export default function Details(props) {
 
 
     const gameDetail=useSelector((state)=>state.detail)// 
-    
+    console.log (gameDetail)
     return(
         <div>
              <Link to='/home'>
@@ -27,11 +27,16 @@ export default function Details(props) {
                     <h1>{gameDetail.name}</h1>
                     <img src={gameDetail.background_image} width="300" height="500"  alt="" />
                     <h6>Released Date:{gameDetail.released}</h6>
-                    <h5>Rating: {gameDetail.rating}</h5>
-                    {<p>About: {gameDetail.description.replace(/(<([^>]+)>)/ig, '')}</p>}
-                    <h3>Genres:{gameDetail.genres.map(el=> el)}</h3>
-                    <h3>Platforms:{gameDetail.platforms.map(el=> el)}</h3>
+                    <h5>Rating: {gameDetail?.rating}</h5>
+                    <p>About: { !gameDetail.create?   gameDetail.description.replace(/(<([^>]+)>)/ig, ''):   gameDetail.description}</p>         
+                    <h3>Genres:{!gameDetail.create?   gameDetail.genres.map(el=> el) : gameDetail.genres.map(el=> el.name)    }</h3>
+                    {gameDetail.platforms?.length>0 && 
+                     <h3>Platforms:{!gameDetail?.platforms?.create?      gameDetail.platforms.map(el=> el):gameDetail.platforms }</h3>
 
+                    }
+                    
+                    
+                
                     </div>
                     :null
 

@@ -14,7 +14,7 @@ function rootReducer(state = initialState, action) {
         videogames: action.payload, // a mi stado inicial, mandale todo lo que tenga la accion get videogames
         filter1: action.payload,
         genero:action.payload,
-        //detail:action.payload
+        detail:action.payload
       };
 
       case "GET-NAME-VIDEOGAMES":
