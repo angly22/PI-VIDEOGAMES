@@ -8,11 +8,10 @@ const {getGameID}= require('../controllers/getGamesID.js');
 const {getGenre}= require('../controllers/getGenre.js');
 const {gamePost}= require('../controllers/postGame.js');
 const {getAll,getAllGameName}= require('../controllers/getAllGames');
-const {finalFiltro} = require('../controllers/getPlatforms')
 //var router = express.Router();
 //router.use(express.json());
 
-const {Videogame}= require('../db') // aqui me traigo el modelo desde db
+const {Videogame}= require('../db'); // aqui me traigo el modelo desde db
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
@@ -39,7 +38,7 @@ router.get('/genres' ,getGenre)
 //POST /videogames
 router.post('/videogame' ,gamePost)
 
-router.get('/filtrogenero', finalFiltro)
+//router.get('/platforms', finalFiltro)
 
 module.exports=router;
 

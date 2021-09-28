@@ -7,6 +7,8 @@ import Paginado from "../Paginado/Paginado";
 import './Home.css'
 import SearchBar from "../SearchBar/SearchBar";
 import CreateVideo from "../CreateVideo/CreateVideo";
+import platforms from "../../img-array/platforms";
+
 export default function Home() {
   
 
@@ -81,10 +83,13 @@ return(
     <option value="Better Rating">Better Rating</option> {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
     <option value="Worse Rating">Worse Rating</option>
     </select>
+
     <select onChange={e=> handlerFilterGenres(e)} >
     <option value="All">Genres</option>  
     {genres.map(el=> <option value={el.name}  >{el.name}</option>)}
     </select>
+
+    
 
     <Paginado
     gamesPage={gamesPage}

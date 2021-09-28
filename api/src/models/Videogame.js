@@ -26,8 +26,8 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT
     },
     platforms: {
-      type: DataTypes.STRING,
-     // allowNull: false,
+      type: DataTypes.JSON,
+      allowNull: false,
     }, 
     create:{
       type:DataTypes.STRING,

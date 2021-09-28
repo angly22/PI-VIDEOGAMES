@@ -31,7 +31,7 @@ export default function Details(props) {
                     <p>About: { !gameDetail.create?   gameDetail.description.replace(/(<([^>]+)>)/ig, ''):   gameDetail.description}</p>         
                     <h3>Genres:{!gameDetail.create?   gameDetail.genres.map(el=> el) : gameDetail.genres.map(el=> el.name)    }</h3>
                     {gameDetail.platforms?.length>0 && 
-                     <h3>Platforms:{!gameDetail?.platforms?.create?      gameDetail.platforms.map(el=> el):gameDetail.platforms }</h3>
+                     <h3>Platforms:{!gameDetail?.platforms?.create?      gameDetail.platforms.map(el=> el):gameDetail.platforms.map(el=> el.name) }</h3>
 
                     }
                     

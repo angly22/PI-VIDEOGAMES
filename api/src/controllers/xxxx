@@ -46,7 +46,7 @@ const getFiltroDB= async ()=>{
             model:Videogame,
             attributes:['name','id','background_image'],
             through: {
-                attributes: []
+                attributes: [] //ignora los otros atributos innecesarios
             }
         } })
         

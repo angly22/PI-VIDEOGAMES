@@ -71,11 +71,7 @@ function rootReducer(state = initialState, action) {
                   videogames: filterGenre,
                 };
         
-               // console.log(filterGenre)
-        //         return {
-        //   ...state,
-        //   videogames: filterGenre,
-        // }; 
+               
 
         
     case "ABC_FILTER":

@@ -3,7 +3,7 @@ import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de re
 import { Link} from "react-router-dom";
 import {postVideogame,getGenres} from "../../actions/action";
 import axios from "axios";
-//import platforms from "../../img-array/platforms";
+const platforms= require  ("../../img-array/platforms.json");
 // ---------------------FUNCION DE VALIDACION DE ERRORES------------------------------------//
 function validate(input) {
     let errors={}
@@ -25,7 +25,8 @@ export default function CreateVideo() {
         description:"",
         released:"",
         rating:"",
-        genres:[]
+        genres:[],
+        platforms:[]
     })
 
     useEffect(()=>{
@@ -51,6 +52,13 @@ export default function CreateVideo() {
         })        //es como un push              //lo que ya habia y despues lo que me llega x el value
     }
 
+    function handleSelectPlat(e){ // cada vez que se cambie o se modifiquen mis imputs
+        setInput({// seteame el estado
+        ...input,  // ademas de lo que ya tiene agregale
+        platforms : [...input.platforms,e.target.value]// guardame en un arreglo         
+        })        //es como un push              //lo que ya habia y despues lo que me llega x el value
+    }
+
     async function handleSubmit(e){ // cada vez que se cambie o se modifiquen mis imputs
         try {
             e.preventDefault(e); // no se refresca
@@ -62,7 +70,8 @@ export default function CreateVideo() {
             description:"",
             released:"",
             rating:"",
-            genres:[]
+            genres:[],
+            platforms:[]
         })
        // return responsePost
       ///dispatch(postVideogame(input)) // despacho mi accion a traves del inpuit
@@ -123,20 +132,28 @@ export default function CreateVideo() {
                 onChange={(e)=> handleChange(e)}
                 />
                 </div>
+                <div>
                   {/* este select si lo pungo multiple no me renderiza */}
                 <select onChange={(e)=> handleSelect(e)} > 
                 {genero.map((gen)=>(
                     <option value={gen.id}>{gen.name}</option>
-
                 ))}
                 </select>
+                </div>
+
+                <div>
+                  {/* este select si lo pungo multiple no me renderiza */}
+                <select onChange={(e)=> handleSelectPlat(e)} > 
+                {platforms.map((pla)=>(
+                    <option value={pla.name}>{pla.name}</option>
+                ))}
+                </select>
+                </div>
+                
                 <button type="submit" >Create</button>
            </form>
         </div>
     )
-
-
-
 
 
 }
