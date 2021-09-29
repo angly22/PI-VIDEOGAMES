@@ -1,36 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .bodylanding{
-    background:url('video-game-play-classic-retro-games_android_1816_1.png');
-    width :1280px;
-    height: 553px;
+  background:url('../../img-array/mike-meyers-ip15nC1LJ0o-unsplash\ \(1\).jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size:cover;
+  height: 575px;
+  /* /* background:url('../../img-array/mike-meyers-ip15nC1LJ0o-unsplash\ \(1\).jpg');
+  width :1280px;
+    
     /* Fijar la imagen de fondo este vertical y
     horizontalmente y centrado */
   background-position: center center;
 
-  /* Esta imagen no debe de repetirse */
-  background-repeat: no-repeat;
-
-  /* COn esta regla fijamos la imagen en la pantalla. */
-  background-attachment: fixed;
-
-  /* La imagen ocupa el 100% y se reescala */
-  background-size: cover;
-
   /* Damos un color de fondo mientras la imagen está cargando  */
-  background-color: #464646;
+  background-color: #464646; 
   }
   
- .h1 {
+ 
 
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-      display: block;
-      font-size: 2em;
-     
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      font-weight: bold;
+  
+  .wrapper {
+    padding: 1.5rem 0;
+    filter: url('#goo');
+}
+
+.button {
+  margin-left: 53%;
+  transform: translateX(-50%);
+  margin-top: 425px;
+  font-family: 'Press Start 2P', cursive;
+
+    display: inline-block;
+    text-align: center;
+    background:  #eee;;
+    color: #1a1e24;
+    font-weight: bold;
+    padding: 0.2em 0.2em 0.2em;
+    line-height: 1;
+    border-radius: 1em;
+    position: relative;
+    min-width: 0.23em;
+    text-decoration: none;
+    font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;;
+    font-size: 1rem;
+    background-color: #1a1e24;
+    color: rgb(112, 105, 105)
+}
+
+.button:before,
+.button:after {
+    width: 4.4em;
+    height: 2.95em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background:rgb(63, 61, 61);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+    
+}
+
+.button:before {
+    top: -25%;
+    left: 20%;
+}
+
+.button:after {
+    bottom: -25%;
+    right: 20%;
+}
+
+.button:hover:before,
+.button:hover:after {
+    transform: none;
+}
+
+
+
+
+
+    .name{
+      position: absolute;
+      left:40%;
+      font-size: 25px;
+      font-family: 'Press Start 2P', cursive;
+      margin-left: -400px; 
+      animation-duration: 2s;
+      animation-name: name;
+      color:whitesmoke;
+      margin-top: 15px;
+   
   }
-
-  .button{ /* Para que no se rompa en dos líneas, y lo translade tal cual. */
-    margin-left: 50%;
-    transform: translateX(-50%);}
+  @keyframes name {
+      from {
+        margin-left: 10%;
+        width: 400%;
+      }}

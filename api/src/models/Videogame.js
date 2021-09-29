@@ -9,11 +9,12 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey:true,
       allowNull: false,
-      //UNIQUE:true
+    
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      
     },
     description: {
       type: DataTypes.STRING,
@@ -37,7 +38,7 @@ module.exports = (sequelize) => {
     background_image:{
       type: DataTypes.TEXT,
       validate: { isUrl: true },
-      defaultValue: 'https://wiki.p-insurgence.com/images/0/09/722.png'      
+      defaultValue: 'https://user-images.githubusercontent.com/84936685/135110175-5b3568ad-4163-4f68-b939-51881695675c.gif'      
     },
   },
   {

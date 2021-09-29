@@ -8,13 +8,15 @@ export default function LandingPage() {
   return (
     <div className='bodylanding'>
       
-      
-      <Link to='/home'>
-        <button className='button'>let's Go</button>
-      </Link>
+        <div>
+        <div className='name'>Welcome to Videogame Finder</div>
+        </div >
+        <div className="wrapper">
+        <Link to='/home'>
+          <button className='button'>START</button>
+        </Link>
+        </div>
     
-    <div>
-      <h1 className='h1'>Welcome to Videogame Finder</h1>
-    </div></div>
+    </div>
   );
 }

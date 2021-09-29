@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap");
+
+
+
+.input {
+  border-radius: 30px;
+  width: 500px;
+  position: absolute;
+  left: 460px;
+  top: 100px;
+}
+
+.input::placeholder{
+    color: rgb(129, 8, 129);
+    
+}
+
+.search  {
+  background: crimson;
+    color: whitesmoke;
+    border-color: rgb(255, 71, 246);
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    font-family: helvetica neue, helvetica, sans-serif;
+  }
+  .search:hover {
+    background: rgb(228, 64, 96);
+    border-color: black;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+  }

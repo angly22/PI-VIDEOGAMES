@@ -8,7 +8,6 @@ import './Home.css'
 import SearchBar from "../SearchBar/SearchBar";
 import CreateVideo from "../CreateVideo/CreateVideo";
 import platforms from "../../img-array/platforms";
-
 export default function Home() {
   
 
@@ -57,68 +56,77 @@ function handlerSortAbece(e) {
     setOrdenado(`Ordenado ${e.target.value}`)// me modifique el estado local y se renderice si no no hace nada en el front
 }
 
-return(
-    <div>
-<Link to='/videogames'>create to your own video game</Link>
-<Link to='/'>Inicio</Link>
-<h1>Videogamessssssssss</h1>
-<button onClick={e=>{handleClick(e)}}>
-    mostrar todos los videojuegos</button>
-    <div>
-   
-    <select onChange={e=> handlerFilterCreate(e)} >
-    <option value="All">Create by</option>
-    <option value="create">For me</option>
-    <option value="developers">Developers</option>
-    </select>
-
-    <select onChange={e=> handlerSortAbece(e)}  >
-    <option value="">A-z</option>
-    <option value="A To z">A To z</option> {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
-    <option value="Z To a">Z To a</option>
-    </select>
-
-    <select onChange={e=> handlerFilterRating(e)} >
-    <option value="All">Rating</option>
-    <option value="Better Rating">Better Rating</option> {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
-    <option value="Worse Rating">Worse Rating</option>
-    </select>
-
-    <select onChange={e=> handlerFilterGenres(e)} >
-    <option value="All">Genres</option>  
-    {genres.map(el=> <option value={el.name}  >{el.name}</option>)}
-    </select>
-
-    
-
-    <Paginado
-    gamesPage={gamesPage}
-    allgames={allgames.length}
-    paginado={paginado}
-    />
-<SearchBar/>
-    {currentGames?.map(el=>{ //mapeo el estado global
-        return (
-            <div className='cards'>
-            <Link to={"/home"}>
-        <Card
-        id={el.id}
-        background_image={el.background_image}
-        name={el.name}//aqui me traigo solos los componentes que ya tengo destruct. en el componente card
-        genres={el.genres}
-        
-        key={el.id}
-        />
-        </Link>
-        </div>
-
-    )})
-}
-
+return (
+  <div className="home">
+   <div className="create"> <Link to="/videogames">CREATE A GAME</Link></div>
+   <div className="inicio"> <Link to="/" >GO Back</Link></div>
+   <div className="title"><p>FIND YOUR VIDEOGAME</p></div >
+    <button className="render"
+      onClick={(e) => {
+        handleClick(e);
+      }}
+    >
+      All Games
+    </button>
+    <div className="all-select">
+<div className="A" >
+      <select onChange={(e) => handlerFilterCreate(e)} >
+        <option value="All">Create by</option>
+        <option value="create">For me</option>
+        <option value="developers">Developers</option>
+      </select>
 </div>
+<div className="B">
+      <select onChange={(e) => handlerSortAbece(e)}   >
+        <option value="A To z">A To z</option>{" "}
+        {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
+        <option value="Z To a">Z To a</option>
+      </select>
+</div>
+<div className="C">
+      <select onChange={(e) => handlerFilterRating(e)} >
+        <option value="All">Rating</option>
+        <option value="Better Rating">Better Rating</option>{" "}
+        {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
+        <option value="Worse Rating">Worse Rating</option>
+      </select>
+      </div>
+      <div className="D">
+      <select onChange={(e) => handlerFilterGenres(e)} >
+        <option value="All">Genres</option>
+        {genres.map((el) => (
+          <option value={el.name}>{el.name}</option>
+        ))}
+    </select>
     </div>
-
-)
+    </div>
+      
+      <SearchBar />
+      <Paginado
+        gamesPage={gamesPage}
+        allgames={allgames.length}
+        paginado={paginado}
+      />
+      <div  className="cartas">
+        {currentGames?.map((el) => {
+          //mapeo el estado global
+          return (
+            <>
+              <Card
+                id={el.id}
+                background_image={el.background_image}
+                name={el.name} //aqui me traigo solos los componentes que ya tengo destruct. en el componente card
+                genres={el.genres}
+                key={el.id}
+              />
+            </>
+          );
+        })}
+      </div>
+      
+    
+  </div>
+);
 };
 
 

@@ -1,4 +1,97 @@
-.cards{
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.create{
+  display: flex;
+}
+
+.inicio{
+  display: flex;
+ float: left;
+ 
+}
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: rgb(85, 53, 126);
+}
+
+
+.title{
+    position: absolute;
+      left:40%;
+      font-size: 15px;
+      font-family: 'Press Start 2P', cursive;
+      margin-left: -300px; 
+      animation-duration: 2s;
+      animation-name: name;
+      color:crimson;
+      margin-top: 0px;
+
+      
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      margin: 0;
+}
+.render{
+  border-radius: 30px;
+  width: 200px;
+  position: absolute;
+  left: 540px;
+  top: 150px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: helvetica neue, helvetica, sans-serif;
+    background: crimson;
+    color: whitesmoke;
+    
+}
+
+.render:hover {
+  background: rgb(228, 64, 96);
+  border-color: black;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+}
+
+
+.all-select{
+	padding: 10px;
+	overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  
+  
+}
+.A{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+
+    
+    
+}
+.B{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+}
+.C{
+    margin: 1em;
+    padding: 1em;
+    float: left;
+}
+.D{
+    margin: 1em;
+    padding: 1em;
     float: left;
 }

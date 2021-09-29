@@ -94,6 +94,7 @@ export default function CreateVideo() {
                 <input placeholder="Enter videogame's name"
                 type="text"
                 name="name"
+                required="required"
                 value={input.name} 
                 onChange={(e)=> handleChange(e)}
                 />
@@ -107,6 +108,7 @@ export default function CreateVideo() {
                 <input placeholder="Describe videogame's you"
                 type="text"
                 name="description"
+                required="required"
                 value={input.description}
                 onChange={(e)=> handleChange(e)} 
                 />
@@ -117,6 +119,7 @@ export default function CreateVideo() {
                 <input placeholder="Date  created it"
                 type="text" 
                 name="released"
+                required="required"
                 value={input.released} // lo que me llega por el input
                 
                 onChange={(e)=> handleChange(e)}
@@ -128,6 +131,7 @@ export default function CreateVideo() {
                 <input placeholder="1 to 10"
                 type="number" 
                 name="rating"
+                required="required"
                 value={input.rating} // lo que me llega por el input
                 onChange={(e)=> handleChange(e)}
                 />

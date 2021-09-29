@@ -41,7 +41,10 @@ const getGames= async (req,res)=>{ // debe esperar a que se carge toda la info a
  //me traigo la info de la bd
 
  const getDB= async ()=>{
-    return await Videogame.findAll({include: Genre})
+    return await Videogame.findAll({
+       order:[["name","ASC"]],
+       
+        include: Genre})
  };
 
  //concateno las dos infos obtenidas
