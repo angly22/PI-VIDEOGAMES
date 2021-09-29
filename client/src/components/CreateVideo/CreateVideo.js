@@ -77,11 +77,8 @@ export default function CreateVideo() {
       ///dispatch(postVideogame(input)) // despacho mi accion a traves del inpuit
         alert("Videogame Successfully Created ")
         } catch (error) {
-            alert("no se creo el videojuego")
+            alert("Videogame don't successfully created")
         }
-             // se creo con exito     
-       
-    
     }       
     
     return(

@@ -78,7 +78,7 @@ return (
 </div>
 <div className="B">
       <select onChange={(e) => handlerSortAbece(e)}   >
-        <option value="A To z">A To z</option>{" "}
+        <option value="A To z">A To z</option>
         {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
         <option value="Z To a">Z To a</option>
       </select>
