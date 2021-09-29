@@ -1,22 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.bodylanding{
-  background:url('../../img-array/mike-meyers-ip15nC1LJ0o-unsplash\ \(1\).jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size:cover;
-  height: 575px;
-  /* /* background:url('../../img-array/mike-meyers-ip15nC1LJ0o-unsplash\ \(1\).jpg');
-  width :1280px;
-    
-    /* Fijar la imagen de fondo este vertical y
-    horizontalmente y centrado */
-  background-position: center center;
-
-  /* Damos un color de fondo mientras la imagen está cargando  */
-  background-color: #464646; 
-  }
   
  
 
@@ -29,7 +12,7 @@
 .button {
   margin-left: 53%;
   transform: translateX(-50%);
-  margin-top: 425px;
+  margin-top: 460px;
   font-family: 'Press Start 2P', cursive;
 
     display: inline-block;
@@ -46,7 +29,7 @@
     font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;;
     font-size: 1rem;
     background-color: #1a1e24;
-    color: rgb(112, 105, 105)
+    color: rgb(255, 255, 255)
 }
 
 .button:before,

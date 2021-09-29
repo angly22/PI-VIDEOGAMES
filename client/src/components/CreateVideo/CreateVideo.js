@@ -3,6 +3,7 @@ import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de re
 import { Link} from "react-router-dom";
 import {postVideogame,getGenres} from "../../actions/action";
 import axios from "axios";
+import './CreateVideo.css'
 const platforms= require  ("../../img-array/platforms.json");
 // ---------------------FUNCION DE VALIDACION DE ERRORES------------------------------------//
 function validate(input) {
@@ -82,13 +83,18 @@ export default function CreateVideo() {
     }       
     
     return(
-        <div>
-            <Link to='/home'><button>Go Home</button></Link> {/*melleva al home xq esta redireciionando con el link*/}
-            <h1>Create  Your Videgames</h1>
-            <form onSubmit={(e)=> handleSubmit(e)}>
+        <>
+        
+        <Link to='/home'><button className="buttonbb">Go Home</button></Link> 
+        <div className="mario"> <img 
+        src='https://i.pinimg.com/originals/d9/7d/f9/d97df91ae1a4516dbdff9dba36f299bc.gif'
+        width="100px"
+        height="150px"></img></div>
+        <div className="padreform">
+            <h1 className="tituloC">Create  Your Videgames</h1>
+            <form className="formulario" onSubmit={(e)=> handleSubmit(e)}>
                 <div> 
-                <label>Name:</label>
-                <input placeholder="Enter videogame's name"
+                <input className="texto" placeholder="Enter videogame's name"
                 type="text"
                 name="name"
                 required="required"
@@ -101,8 +107,7 @@ export default function CreateVideo() {
                 </div>
 
                 <div> 
-                <label>Description:</label>
-                <input placeholder="Describe videogame's you"
+                <input  className="TextoDescript" placeholder="Describe videogame's you"
                 type="text"
                 name="description"
                 required="required"
@@ -112,8 +117,7 @@ export default function CreateVideo() {
                 </div>
                 
                 <div> 
-                <label>Date of release:</label>
-                <input placeholder="Date  created it"
+                <input className="texto" placeholder="Date  created it"
                 type="text" 
                 name="released"
                 required="required"
@@ -124,8 +128,8 @@ export default function CreateVideo() {
                 </div>
                 
                 <div> 
-                <label>Rating:</label>
-                <input placeholder="1 to 10"
+                <input className="texto" placeholder="Rating"
+                min="1" max="10"
                 type="number" 
                 name="rating"
                 required="required"
@@ -135,7 +139,7 @@ export default function CreateVideo() {
                 </div>
                 <div>
                   {/* este select si lo pungo multiple no me renderiza */}
-                <select onChange={(e)=> handleSelect(e)} > 
+                <select className="select" onChange={(e)=> handleSelect(e)} > 
                 {genero.map((gen)=>(
                     <option value={gen.id}>{gen.name}</option>
                 ))}
@@ -144,16 +148,18 @@ export default function CreateVideo() {
 
                 <div>
                   {/* este select si lo pungo multiple no me renderiza */}
-                <select onChange={(e)=> handleSelectPlat(e)} > 
+                <select className="select" onChange={(e)=> handleSelectPlat(e)} > 
                 {platforms.map((pla)=>(
                     <option value={pla.name}>{pla.name}</option>
                 ))}
                 </select>
                 </div>
                 
-                <button type="submit" >Create</button>
+                <button className="crear" type="submit" >Create</button>
+               
            </form>
         </div>
+        </>
     )
 
 

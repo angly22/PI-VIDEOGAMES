@@ -131,13 +131,4 @@ function rootReducer(state = initialState, action) {
 }
 
 
-// case'FILTER_GENRE': // mismo nombre de la action
-// const allVideogames= state.videogames
-// const FilterGenre= action.payload === 'All' ? allVideogames : allVideogames.filter(el=>el.genres === action.payload)
-// return{
-//     ...state, // concatenamos el estado anterior, xq si tenemos varios estados debe modificar solo el estado completo no todos
-//     videogames: statusFilterGenre
-
-// }
-
 export default rootReducer;

@@ -22,8 +22,8 @@ export default function Card({
         className="foto"
         src={background_image}
         alt="img not found"
-        width="200px"
-        height="200px"
+        width="100px"
+        height="150px"
       ></img>
       <br />
       <Link to={`/videogame/${id}`}>

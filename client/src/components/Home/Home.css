@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .create{
   display: flex;
@@ -20,17 +19,15 @@ a:active {
 
 
 .title{
-    position: absolute;
+      position: absolute;
       left:40%;
       font-size: 15px;
       font-family: 'Press Start 2P', cursive;
       margin-left: -300px; 
       animation-duration: 2s;
       animation-name: name;
-      color:crimson;
-      margin-top: 0px;
-
-      
+      color:white;
+      top: 20px;
       overflow: hidden;
       display: flex;
       flex-wrap: wrap;
@@ -39,22 +36,18 @@ a:active {
       margin: 0;
 }
 .render{
-  border-radius: 30px;
-  width: 200px;
-  position: absolute;
-  left: 540px;
-  top: 150px;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: helvetica neue, helvetica, sans-serif;
-    background: crimson;
+  background: black;
     color: whitesmoke;
-    
+    border-color: white;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-family: helvetica neue, helvetica, sans-serif;
 }
 
+
 .render:hover {
-  background: rgb(228, 64, 96);
+  background: black;
   border-color: black;
   font-family: "Noto Sans", sans-serif;
   font-size: 15px;
@@ -69,6 +62,7 @@ a:active {
   justify-content: center;
   align-content: center;
   margin: 0;
+  top: 20px;
   
   
 }
@@ -94,4 +88,29 @@ a:active {
     margin: 1em;
     padding: 1em;
     float: left;
+}
+
+.buttonCREATE {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  position: absolute;
+    top: 10px;
+    left: 1200px;
+}
+
+.buttonCREATE:hover {
+  background-color: black; /* Green */
+  color: white;
+}
+.buttonBACK{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  position: absolute;
+    top: 10px;
+    left: 50px;
+}
+
+.buttonBACK:hover {
+  background-color: black; /* Green */
+  color: white;
 }

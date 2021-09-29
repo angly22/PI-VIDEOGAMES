@@ -6,7 +6,7 @@ import './LandingPage.css'
 
 export default function LandingPage() {
   return (
-    <div className='bodylanding'>
+    <div >
       
         <div>
         <div className='name'>Welcome to Videogame Finder</div>

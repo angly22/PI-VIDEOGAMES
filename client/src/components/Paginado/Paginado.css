@@ -5,11 +5,12 @@ nav > ul.paginado {
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content:right;
     align-items: center;
     height: 100%;
-    left: 150px;
+    left:150px;
     text-align: center;
+    color: black;
 }
 
 .number{
@@ -18,10 +19,10 @@ nav > ul.paginado {
     height: 100%;
     width: auto;
     align-items: center;
-    border-color:  crimson;
     float: left;
-    margin-right: 10px;
+    margin-right:1px;
     padding: 0 4px;
     margin-top: 100px;
+    
     
 }

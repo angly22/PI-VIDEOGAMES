@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 .cartas {
   display: flex;
@@ -8,45 +9,61 @@
   align-content: center;
   
 }
-.cartas div {
-  width: 40%;
-  text-align: center;
+.cartas .cartascontenedor {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 250px;
+  text-align: center;
+text-shadow: black;
   margin: 10px;
   padding: 15px;
   background: rgb(231, 231, 241);
-  background: radial-gradient(
+  background:white;
+  border-radius: 20px;
+  
+  /* radial-gradient(
     circle,
     rgba(231, 231, 241, 1) 0%,
     rgba(185, 185, 231, 1) 51%,
     rgba(255, 251, 251, 1) 100%
-  );
-  border-radius: 40px;
-  color: rgb(78, 5, 112);
+  ) */
   
-}
-
-
-.foto {
-  width: 100px;
-  height: 150px;
 }
 
 .genero{
-  font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
+  color:black;
+  font-family: helvetica neue, helvetica, sans-serif;
+
 }
+.foto {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  
+}
+
+ul {
+  list-style-type:none;
+  padding:0 0 0 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+li {
+    font-size:12px;
+    padding:0 10px 0 0;
+  }
 
 
 .nombre {
+  white-space: initial !important;
   font-family: "Press Start 2P", cursive;
   font-size: small;
-  color: crimson;
-  display: block;
-  
+  color: black;
+   
 }
 
 .details {
@@ -61,17 +78,17 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: mintcream;
+  color: black;
 
   color: white;
-  background: crimson;
+  background: black;
   border: 0;
   border-radius: 0.2em;
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
 .details:hover {
-  color: rgb(54, 6, 54);
+  color: white;
 }
 
 .details:after {
@@ -91,6 +108,7 @@
 .details:hover:after {
   top: 0;
   left: 0;
+  border: 0.2em solid white;
 }
 
 

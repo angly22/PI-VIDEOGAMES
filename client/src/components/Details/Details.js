@@ -2,7 +2,7 @@ import React, { useEffect } from "react"; // los hooks a utilizar de react
 import {useDispatch,useSelector} from'react-redux' // los hooks a utilizar de react-redux
 import { Link} from "react-router-dom";
 import {getDetail} from "../../actions/action";
-
+import  './Detaisl.css'
 
 export default function Details(props) {
     console.log(props)
@@ -19,29 +19,23 @@ export default function Details(props) {
     return(
         <div>
              <Link to='/home'>
-                     <button>Go Home</button>
+                     <button className="buttonhome">Go Home</button>
                 </Link>
             {
                 gameDetail.name?
-                <div>
-                    <h1>{gameDetail.name}</h1>
-                    <img src={gameDetail.background_image} width="300" height="500"  alt="" />
-                    <h6>Released Date:{gameDetail.released}</h6>
-                    <h5>Rating: {gameDetail?.rating}</h5>
-                    <p>About: { !gameDetail.create?   gameDetail.description.replace(/(<([^>]+)>)/ig, ''):   gameDetail.description}</p>         
-                    <h3>Genres:{!gameDetail.create?   gameDetail.genres.map(el=> el) : gameDetail.genres.map(el=> el.name)    }</h3>
-                    {gameDetail.platforms?.length>0 && 
-                     <h3>Platforms:{!gameDetail?.platforms?.create?      gameDetail.platforms.map(el=> el):gameDetail.platforms.map(el=> el.name) }</h3>
+                <div className="detail">
+                  <div className="titleDetails"><p>{gameDetail.name}</p></div>
+                  <div className="imgDetails"> <img src={gameDetail.background_image} width="300" height="400"  alt="" /></div>
+                  <div className="aboDetails">  <p className="pDetails"> { !gameDetail.create?   gameDetail.description.replace(/(<([^>]+)>)/ig, ''):   gameDetail.description}</p> </div>        
 
-                    }
-                    
-                    
-                
+                <div> <h3>Released Date:{gameDetail.released}</h3></div>
+                  <div>  <h3>Rating: {gameDetail?.rating}</h3></div>
+                  
+                  <ul>  <li>Genres:</li>{!gameDetail.create?   gameDetail.genres.map(el=> <li>{el}</li>) : gameDetail.genres.map(el=> <li>{el.name}</li> )    }</ul>
+                    {gameDetail.platforms?.length>0 && 
+                    <ul> <li>Platforms:</li>{!gameDetail?.platforms?.create?      gameDetail.platforms.map(el=><li>{el}</li>):gameDetail.platforms.map(el=> <li>{el.name}</li> ) }</ul>}
                     </div>
                     :null
-
             }
-               
-
-            </div>
-)}
+           
+ </div>)}

@@ -1,1 +1,11 @@
-
+body{
+    background: url('../src/img-array/mike-meyers-ip15nC1LJ0o-unsplash\ \(1\).jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  margin: 0;
+  position:static;
+  background-attachment: fixed;
+  background-position: center center;
+}

@@ -1,0 +1,107 @@
+.padreform {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    padding-left: 20px;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tituloC{
+  
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: 0; 
+    animation-duration: 2s;
+    animation-name: name;
+    color:rgb(255, 249, 250);
+    margin-top: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.texto{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+    margin-left: 30px;
+}
+
+.crear{
+    width:90px;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid white;
+	border-radius:5px;
+	display:block;
+	color:rgb(3, 3, 3);
+	background-color:white;
+    align-items: center;
+    margin-left: 80px;
+}
+.crear:hover{
+    cursor:pointer;
+    background-color: black;
+    color: white;
+}
+
+.TextoDescript{
+    margin:8px 0;
+    width:195px;
+	height:80px;
+	border:1px solid white;
+	border-radius:3px;
+	background-color:white;			
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+    margin-left: 30px;
+}
+
+.select{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid white;
+	border-radius:3px;
+	background-color:white;
+	margin:8px 0;
+	display:inline-block;
+    margin-left: 40px;
+
+}
+
+.buttonbb{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    position: absolute;
+      top: 10px;
+      left: 20px;
+  }
+  
+  .buttonbb:hover {
+    background-color: black; /* Green */
+    color: white;
+    cursor: pointer;
+  }
+
+.mario{
+    
+    padding: 10px;
+	overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  top: 20px;
+   
+ 
+}

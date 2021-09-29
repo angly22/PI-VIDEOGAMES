@@ -58,15 +58,15 @@ function handlerSortAbece(e) {
 
 return (
   <div className="home">
-   <div className="create"> <Link to="/videogames">CREATE A GAME</Link></div>
-   <div className="inicio"> <Link to="/" >GO Back</Link></div>
-   <div className="title"><p>FIND YOUR VIDEOGAME</p></div >
+    <Link to="/videogames"><button className="buttonCREATE">CREATE GAME</button></Link>
+    <Link to="/" ><button className="buttonBACK">BACK</button></Link>
+   <div ><p className="title">FIND YOUR VIDEOGAME</p></div >
     <button className="render"
       onClick={(e) => {
         handleClick(e);
       }}
     >
-      All Games
+      RESET
     </button>
     <div className="all-select">
 <div className="A" >
@@ -77,7 +77,7 @@ return (
       </select>
 </div>
 <div className="B">
-      <select onChange={(e) => handlerSortAbece(e)}   >
+      <select onChange={(e) => handlerSortAbece(e)}>
         <option value="A To z">A To z</option>
         {/* se pone siempre value para poder acceder y preguntar si tengo opciones, si el value es ascendente hace esto */}
         <option value="Z To a">Z To a</option>

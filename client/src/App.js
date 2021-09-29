@@ -10,7 +10,7 @@ import Details from "./components/Details/Details";
 export default function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div >
         <Switch>
         <Route exact path="/" component ={LandingPage} />
         <Route  path="/home" component ={Home} />

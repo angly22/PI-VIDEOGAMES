@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
     background_image:{
       type: DataTypes.TEXT,
       validate: { isUrl: true },
-      defaultValue: 'https://user-images.githubusercontent.com/84936685/135110175-5b3568ad-4163-4f68-b939-51881695675c.gif'      
+      defaultValue: 'https://i.gifer.com/fCG.gif'      
     },
   },
   {
