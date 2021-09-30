@@ -12,6 +12,8 @@ function validate(input) {
       errors.name =('The name is required'); // mando error
     }else if(!input.description){
         errors.description =('Description is required');
+    }else if(!input.rating){
+        errors.rating =('Rating is required');
     } return errors
   }
 
@@ -53,11 +55,11 @@ export default function CreateVideo() {
         })        //es como un push              //lo que ya habia y despues lo que me llega x el value
     }
 
-    function handleSelectPlat(e){ // cada vez que se cambie o se modifiquen mis imputs
-        setInput({// seteame el estado
-        ...input,  // ademas de lo que ya tiene agregale
-        platforms : [...input.platforms,e.target.value]// guardame en un arreglo         
-        })        //es como un push              //lo que ya habia y despues lo que me llega x el value
+    function handleSelectPlat(e){ 
+        setInput({
+        ...input,  
+        platforms : [...input.platforms,e.target.value]        
+        })      
     }
 
     async function handleSubmit(e){ // cada vez que se cambie o se modifiquen mis imputs
@@ -65,7 +67,7 @@ export default function CreateVideo() {
             e.preventDefault(e); // no se refresca
         console.log(input)
         var responsePost = await axios.post("http://localhost:3001/videogame",input);//quiero en esta ruta hacer el post del payload
-        console.log(responsePost)
+        //console.log(responsePost)
         setInput({
             name:"",
             description:"",
@@ -114,10 +116,12 @@ export default function CreateVideo() {
                 value={input.description}
                 onChange={(e)=> handleChange(e)} 
                 />
+                
+                
                 </div>
                 
                 <div> 
-                <input className="texto" placeholder="Date  created it"
+                <input className="texto" placeholder="Date created it"
                 type="text" 
                 name="released"
                 required="required"
@@ -128,7 +132,7 @@ export default function CreateVideo() {
                 </div>
                 
                 <div> 
-                <input className="texto" placeholder="Rating"
+                <input className="texto" placeholder="Rating  1-10"
                 min="1" max="10"
                 type="number" 
                 name="rating"
@@ -139,7 +143,8 @@ export default function CreateVideo() {
                 </div>
                 <div>
                   {/* este select si lo pungo multiple no me renderiza */}
-                <select className="select" onChange={(e)=> handleSelect(e)} > 
+                <select className="select" onChange={(e)=> handleSelect(e)} required="required" >
+                    <option>Genres</option> 
                 {genero.map((gen)=>(
                     <option value={gen.id}>{gen.name}</option>
                 ))}
@@ -149,6 +154,7 @@ export default function CreateVideo() {
                 <div>
                   {/* este select si lo pungo multiple no me renderiza */}
                 <select className="select" onChange={(e)=> handleSelectPlat(e)} > 
+                <option>Platforms</option>
                 {platforms.map((pla)=>(
                     <option value={pla.name}>{pla.name}</option>
                 ))}
