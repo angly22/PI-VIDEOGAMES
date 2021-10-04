@@ -13,9 +13,13 @@ return(// aqui renderizo los numero
     <ul className ='paginado'>
         {numberPage &&
         numberPage.map(number=>(
-            
+           
+
             <li className ='number' key={number}>
+            {/* <button disabled={number===1} onClick={(e)=>paginado(number -1)}>prev</button> */}
             <button onClick={(e)=>paginado(number)}>{number}</button>
+            {/* <button disabled={number===1} onClick={(e)=>paginado(number -1)}>Next</button> */}
+
             </li>
             
         ))}
